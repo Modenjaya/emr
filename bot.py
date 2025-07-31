@@ -211,7 +211,7 @@ class EmoryaBot:
         return None
 
     # Ini adalah "user_login" yang sebenarnya untuk Emorya, yang akan menggunakan refresh token
-    async def process_firebase_auth(self, user_id: str, initial_refresh_token: str, proxy=None, rotate_proxy: bool):
+    async def process_firebase_auth(self, user_id: str, initial_refresh_token: str, rotate_proxy: bool, proxy=None):
         if user_id not in self.firebase_tokens or not self.firebase_tokens[user_id].get("access_token"):
             self.log(f"{Fore.YELLOW+Style.BRIGHT}Firebase: Access token not found or expired. Attempting refresh...{Style.RESET_ALL}")
             # Coba refresh token
